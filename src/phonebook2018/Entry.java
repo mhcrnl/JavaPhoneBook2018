@@ -32,10 +32,12 @@ public class Entry implements Comparable {
         this.number = number;
     }
     
+    @Override
     public String toString()  {
         return name + ": " + number;
     }
     
+    @Override
     public int compareTo(Object ob)  {
         return ((Entry) ob).name.compareTo(this.name);
     }

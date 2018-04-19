@@ -12,8 +12,10 @@ public class PhoneNumber implements Serializable {
 		return phoneNumber;
 	}
 
-	public void setPhoneNumber(String phoneNumber) {
-		this.phoneNumber = phoneNumber;
+	public void setPhoneNumber(String phoneNumber) throws Exception {
+            // metoda phoneNumberOk returneaza true de aceea inversam la false
+            if(!phoneNumberOk(phoneNumber)) throw new Exception("Numar gresit!");
+            this.phoneNumber = phoneNumber;
 	}
 
 	public PhoneNumber(String phoneNumber) throws Exception {
@@ -28,4 +30,8 @@ public class PhoneNumber implements Serializable {
 		return phoneNumber;
 	}
 	// TODO: toString nice format?
+        // This method return true
+        private static boolean phoneNumberOk(String phoneNumber){
+            return phoneNumber != null && phoneNumber.length()>0;
+        }
 }
