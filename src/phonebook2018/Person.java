@@ -3,7 +3,10 @@ package phonebook2018;
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
-
+/**
+ * @file Person.java
+ * @author mhcrnl
+ */
 public class Person implements Serializable {
 
 	private static final long serialVersionUID = 1513862870479192109L;
@@ -40,15 +43,17 @@ public class Person implements Serializable {
 	public String getFirstName() {
 		return firstName;
 	}
-	public void setFirstName(String firstName) {
-		this.firstName = firstName;
+	public void setFirstName(String firstName) throws Exception{
+            if(firstName == null || firstName.length() < 0) 
+                throw new Exception("Introduceti un nume!");
+            this.firstName = firstName;
 	}
 	public String getLastName() {
 		return lastName;
 	}
 	public void setLastName(String lastName) throws Exception {
-            if(lastName==null || lastName.length()>0) 
-                throw new Exception("Introduceti un nume!");
+            if(lastName == null || lastName.length() < 0) 
+                throw new Exception("Introduceti un prenume!");
 		this.lastName = lastName;
 	}
 	public List<PhoneNumber> getPhoneNumbers() {
@@ -74,5 +79,25 @@ public class Person implements Serializable {
 		
 		return personString;
 	}
+        /**
+         * Testarea clasei Person
+         */
+        public static void test1(){
+            Person mh = new Person("Mihai", "Cornel");
+            System.out.println(mh);
+            ArrayList<PhoneNumber> pn = new ArrayList();
+            PhoneNumber nr = new PhoneNumber("0722270796");
+            PhoneNumber nr1 = new PhoneNumber("0723196164");
+            pn.add(nr);
+            pn.add(nr1);
+            mh.setPhoneNumbers(pn);
+            System.out.println(mh);
+            try {
+                mh.setFirstName("Marcel");
+            } catch (Exception ex){
+                System.out.println(ex.getMessage());
+            }
+            System.out.println(mh);
+        }
 
 }

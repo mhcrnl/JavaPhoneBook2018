@@ -18,6 +18,8 @@ public class Main {
 	private static final String DEFAULT_PHONEBOOK_NAME = "phonebook.txt";
 	
 	public static void main(String[] args) {
+            
+            Person.test1();
 		 
 		int number = 0;
 		
