@@ -16,8 +16,10 @@ public class PhoneNumber implements Serializable {
 		this.phoneNumber = phoneNumber;
 	}
 
-	public PhoneNumber(String phoneNumber) {
+	public PhoneNumber(String phoneNumber) throws Exception {
 		super();
+                if(phoneNumber == null || phoneNumber.length() < 0)
+                    throw new Exception("Formatul numarului de tel. neacceptat!");
 		this.phoneNumber = phoneNumber;
 	}
 	

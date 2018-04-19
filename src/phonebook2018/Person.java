@@ -83,6 +83,7 @@ public class Person implements Serializable {
          * Testarea clasei Person
          */
         public static void test1(){
+         try{
             Person mh = new Person("Mihai", "Cornel");
             System.out.println(mh);
             ArrayList<PhoneNumber> pn = new ArrayList();
@@ -92,12 +93,13 @@ public class Person implements Serializable {
             pn.add(nr1);
             mh.setPhoneNumbers(pn);
             System.out.println(mh);
-            try {
-                mh.setFirstName("Marcel");
-            } catch (Exception ex){
-                System.out.println(ex.getMessage());
-            }
+            mh.setFirstName("Marcel");
             System.out.println(mh);
+            
+        } catch (Exception ex){
+                System.out.println(ex.getMessage());
         }
+            
+    }
 
 }

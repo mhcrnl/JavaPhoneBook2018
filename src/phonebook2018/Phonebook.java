@@ -118,7 +118,13 @@ public class Phonebook extends ArrayList<Person> implements Serializable {
 	}
 
 	private static PhoneNumber randomPhoneNumber() {
-		return new PhoneNumber(randomDigits(3) + "-" + randomDigits(3) + "-" + randomDigits(4));
+            PhoneNumber pn = null;
+            try{
+		 pn = new PhoneNumber(randomDigits(3) + "-" + randomDigits(3) + "-" + randomDigits(4));
+            } catch(Exception ex){
+                System.out.println(ex.getMessage());
+            }
+            return pn;
 	}
 	
 	private static String randomDigits(int numOfDigits) {

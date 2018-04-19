@@ -96,14 +96,17 @@ public class Main {
 							System.err.println("IO error trying to read your choice!");
 							System.exit(1);
 						}
-						
-						Person personFromPhoneNumber = phonebook.findPersonWithPhoneNumber(new PhoneNumber(phoneNumber));
-						
-						if(personFromPhoneNumber != null) {
+						try{
+                                                    Person personFromPhoneNumber = phonebook.findPersonWithPhoneNumber(new PhoneNumber(phoneNumber));
+                                                    if(personFromPhoneNumber != null) {
 							System.out.println(personFromPhoneNumber);
-						} else {
+                                                    } else {
 							System.out.println("Couldn't find anyone with a phone number of '" + phoneNumber + "'");
-						}
+                                                    }
+                                                } catch(Exception ex){
+                                                    System.out.println(ex.getMessage());
+                                                }
+						
 						
 						break;
 					case 3:
