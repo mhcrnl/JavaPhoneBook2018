@@ -2,7 +2,7 @@
 
 At the top of the file there should be a short introduction and/ or overview that explains **what** the project is. This description should match descriptions added for package managers (Gemspec, package.json, etc.)
 
-This is a **NetBeans** project.
+This is a **Java** in **NetBeans** project.
 
 ## Code Example
 
@@ -15,6 +15,10 @@ A short description of the motivation behind the creation and maintenance of the
 ## Installation
 
 Provide code examples and explanations of how to get the project.
+```
+git clone http//:...........................
+```
+and import project in NetBeans.
 
 ## API Reference
 
